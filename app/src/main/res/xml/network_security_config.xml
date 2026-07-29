@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 全局允许所有明文http（仅内网/测试环境使用，生产外网不推荐） -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
