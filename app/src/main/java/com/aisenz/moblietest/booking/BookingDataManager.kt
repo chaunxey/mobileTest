@@ -47,6 +47,7 @@ class BookingDataManager private constructor() {
             val currentTimeMillis = System.currentTimeMillis() / 1000
             currentTimeMillis < expiryTimestamp
         } catch (e: Exception) {
+            e.printStackTrace()
             false // 解析失败
         }
     }

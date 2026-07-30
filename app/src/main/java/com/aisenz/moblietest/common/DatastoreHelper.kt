@@ -9,12 +9,10 @@ import com.aisenz.moblietest.booking.BookingResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.json.Json
-import java.util.concurrent.ConcurrentHashMap
 
 
 // 全局扩展
 private val Context.dataStore by preferencesDataStore(name = "booking_cache")
-
 
 class DatastoreHelper private constructor() {
     companion object {
