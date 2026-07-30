@@ -13,6 +13,7 @@ class BookingMockingService private constructor() {
         val INSTANCE by lazy { BookingMockingService() }
     }
 
+    //模拟请求数据
     suspend fun mockingBooking(): Result<BookingResponse?> {
         // 模拟网络延迟
         kotlinx.coroutines.delay(1000.milliseconds)

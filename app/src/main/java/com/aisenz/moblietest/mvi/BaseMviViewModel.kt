@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-
+//MVI VIEWMODEL BASE
 abstract class BaseMviViewModel<STATE : BaseMviUiState, INTENT : BaseMviIntent, EFFECT : BaseMviSideEffect>(
     initialState: STATE
 ) :

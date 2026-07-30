@@ -56,6 +56,7 @@ fun BookingScreen(goWeb: (String) -> Unit = {}) {
                 .weight(1f)
                 .fillMaxWidth()
         ) {
+            //网络请求失败展示
             if (uiState.pageStatus == PageStatus.Error) {
                 Column(
                     modifier = Modifier.fillMaxSize(),

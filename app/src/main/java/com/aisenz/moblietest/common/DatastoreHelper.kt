@@ -21,11 +21,10 @@ class DatastoreHelper private constructor() {
         val INSTANCE by lazy { DatastoreHelper() }
     }
 
+    //使用appContext 由于 Context.dataStore
     private val appContext = BookingApp.appContext
     private val json = Json { ignoreUnknownKeys = true }
     private val BOOKING_KEY = stringPreferencesKey("booking")
-
-    val runtimeCache = ConcurrentHashMap<String, Any>()
 
     //保存本地持久化数据 booking
     suspend fun saveBookingCache(booking: BookingResponse?) {

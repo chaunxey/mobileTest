@@ -19,6 +19,10 @@ class BookingViewModel :
         }
     }
 
+    /**
+     * @desc
+     * @param isRefresh 是否刷新
+     */
     private fun mockShipBookingRequest(isRefresh: Boolean = false) = viewModelScope.launch {
         if (isRefresh) updateUiState { copy(isRefreshing = true) }
         dataManager.mockingShipBookingData().collect { result ->

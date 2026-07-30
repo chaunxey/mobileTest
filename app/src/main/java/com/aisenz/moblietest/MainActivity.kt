@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MoblieTestTheme {
+                //设置默认路由ShipBookingRoute
                 val navBackStack = rememberNavBackStack(ShipBookingRoute)
                 Scaffold(
 //                    contentWindowInsets = WindowInsets(0.dp),// 关闭所有自动内边距

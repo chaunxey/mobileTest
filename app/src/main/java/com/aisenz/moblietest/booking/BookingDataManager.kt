@@ -15,15 +15,18 @@ class BookingDataManager private constructor() {
 
     private val datastore: DatastoreHelper = DatastoreHelper.INSTANCE
 
+    //模拟请求数据
     fun mockingShipBookingData(): Flow<Result<BookingResponse?>> {
         return flow {
+            //读取缓存
             val bookingCache = datastore.getBookingCacheFlow().firstOrNull()
             println("booking bookingCache>> bookingCache:$bookingCache")
-            //读取缓存 booking 有缓存且在有效期内则先展示缓存数据
+            //booking 有缓存且在有效期内则先展示缓存数据
             if (bookingCache != null && isCacheValid(bookingCache.expiryTime)) {
                 emit(Result.success(bookingCache))
             }
             try {
+                //无论是否有缓存 都会从服务端请求一次 无缝展示
                 val newBooking = service.mockingBooking().getOrThrow()
                 println("booking mockingBooking>> newBooking:$newBooking")
                 datastore.saveBookingCache(newBooking)
